@@ -1,0 +1,24 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name="variable1" type="double" default="5" />
+    <aura:attribute name="variable2" type="double" default="8" />
+    <aura:attribute name="result" type="double"  />
+    
+    <aura:handler name= "init" value="{!this}" action="{!c.calculateAdd}" />
+    <aura:handler name= "change" value="{!v.variable1}" action="{!c.calculateAdd}" />
+    <aura:handler name= "change" value="{!v.variable2}" action="{!c.calculateAdd}" />
+    
+    <ui:inputNumber label="Number 1 : "  value="{!v.variable1}" />
+    <ui:inputNumber label="Number 2 : "  value="{!v.variable2}" />
+    
+    <lightning:button variant="brand" label="Add" title="Brand action" onclick="{!c.calculateAdd}" />
+    <lightning:button variant="brand" label="Sub" title="Brand action" onclick="{!c.calculateSub}" /> 
+    <lightning:button variant="brand" label="Mul" title="Brand action" onclick="{!c.calculateMul}" />
+    <lightning:button variant="brand" label="Div" title="Brand action" onclick="{!c.calculateDiv}" />
+     <br/>
+    
+    Total sum of 2 numbers is:
+    <ui:outputNumber value="{!v.result}"/>
+    <br>></br>
+    
+                                                                                                               
+</aura:component>

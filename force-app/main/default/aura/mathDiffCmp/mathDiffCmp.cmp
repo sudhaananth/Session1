@@ -1,0 +1,9 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+   
+    <aura:handler  name= "componentEvent" event="c.componentEvent" action="{!c.callDiff}" />
+    
+    <aura:attribute name="diffResult" type="double" />
+    
+    The difference of 2 numbers is : {!v.diffResult}
+    <c:childCmp   num1="10" num2="5"/>
+</aura:component>
